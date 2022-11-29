@@ -1,16 +1,35 @@
+import { Navigate, Route, Routes } from 'react-router-dom';
+
+//import without lazy
+//import { Home } from 'pages/Home/Home';
+import { Layout } from './Layout/Layout';
+import { Cast } from 'pages/Cast/Cast';
+import { Reviews } from 'pages/Reviews/Reviews';
+
+//import with lazy
+import { lazy } from 'react';
+//import { Layout } from './Layout/Layout';
+const HomePage = lazy(() => import('../pages/Home/Home'));
+const MoviesPage = lazy(() => import('../pages/Movies/Movies'));
+const MovieDetailsPage = lazy(() => import('../pages/MovieDetails/MovieDetails'));
+//const Cast = lazy(() => import('../pages/Cast/Cast'));
+//const Reviews = lazy(() => import('../pages/Reviews/Reviews'));
+
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+   <>
+       <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path="movies" element={<MoviesPage />} />
+          <Route path="movies/:movieId" element={<MovieDetailsPage />}>
+            <Route path="cast" element={<Cast />} />
+            <Route path="reviews" element={<Reviews />} />
+          </Route>
+          <Route path='*' element={<Navigate to="/" replace/>}/>
+        </Route>
+      </Routes>
+ </>
   );
 };
