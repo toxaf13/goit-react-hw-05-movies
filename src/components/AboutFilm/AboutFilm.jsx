@@ -1,6 +1,6 @@
 import imgNotFound from '../../images/imgNotFound.png';
 import PropTypes from 'prop-types';
-
+import style from './AboutFilm.module.css'
 export const AboutFilm = ({
    poster_path,
    title,
@@ -9,7 +9,7 @@ export const AboutFilm = ({
    genres,
 }) => {
    return (
-      <>
+      <div className={style.block}>
          <img 
             src={
                poster_path ===null 
@@ -19,7 +19,7 @@ export const AboutFilm = ({
             alt ={title}
             width='300'
          />
-         <div>
+         <div className={style.blockAbout}>
             <h2>{title}</h2>
             <p>
                User Score: {Math.round(vote_average * 10)} %
@@ -31,7 +31,7 @@ export const AboutFilm = ({
                <li key={id}>{name}</li>
             ))}</ul>
          </div>
-      </>
+      </div>
    )
 }
 AboutFilm.propTypes = {

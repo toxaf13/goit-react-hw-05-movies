@@ -1,6 +1,7 @@
 import { Suspense, useEffect } from "react";
 import { useState } from "react"
 import { Link, Outlet, useLocation, useParams } from "react-router-dom";
+import style from './MovieDetails.module.css';
 
 import { AboutFilm } from "components/AboutFilm/AboutFilm";
 import { AdditionalInfo } from "components/AdditionalInfo/AdditionalInfo";
@@ -31,9 +32,9 @@ const MovieDetailsPage = () => {
       <>
          <section>
             {location.state ? (
-               <Link to={backLinkHref}>Go back </Link>
+               <Link to={backLinkHref} className={style.btn_go_back}>Go back </Link>
             ) : (
-               <Link to="/">Go back</Link>
+               <Link to="/" className={style.btn_go_back}>Go back</Link>
             )}
             <div>
                {isLoading && <Loader/>}

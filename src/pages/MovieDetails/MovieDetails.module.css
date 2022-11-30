@@ -1,0 +1,5 @@
+.btn_go_back{
+   display: flex;
+   justify-content: end;
+   margin-right: 50px;
+  }

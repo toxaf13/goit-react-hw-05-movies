@@ -1,0 +1,9 @@
+.main{
+   margin: 30px;
+}
+.list{
+   display: flex;
+   gap: 50px;
+   font-size: 25px;
+   margin-left: 50px;
+}
