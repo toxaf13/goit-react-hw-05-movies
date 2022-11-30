@@ -5,10 +5,10 @@ import { useParams } from "react-router-dom";
 import { getMovieCredits } from "services/getMovieCredits";
 import { CastGallery } from "components/CastGallery/CastGallery";
 
-export const Cast = () => {
+const Cast = () => {
    const [credits, setCredits] = useState([]);
    const [isLoading, setIsLoading] = useState(false);
-   const [error, setError] =useState(null);
+   const [error, setError] = useState(null);
 
    const {movieId} = useParams();
    useEffect(() => {
@@ -31,4 +31,5 @@ export const Cast = () => {
          </section>
       </>
    )
-}
+};
+export default Cast;
