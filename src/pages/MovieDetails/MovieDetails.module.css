@@ -1,5 +1,5 @@
 .btn_go_back{
    display: flex;
-   justify-content: end;
+   justify-content: flex-end;
    margin-right: 50px;
   }

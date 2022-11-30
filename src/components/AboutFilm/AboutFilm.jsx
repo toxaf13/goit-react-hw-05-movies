@@ -19,7 +19,7 @@ export const AboutFilm = ({
             alt ={title}
             width='300'
          />
-         <div className={style.blockAbout}>
+         <div >
             <h2>{title}</h2>
             <p>
                User Score: {Math.round(vote_average * 10)} %
